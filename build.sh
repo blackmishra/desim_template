@@ -9,6 +9,7 @@ pip install yagmail
 pip install psycopg2
 pip install dj-database-url
 pip install python-dotenv
+pip install whitenoise
 pip install authlib
 python manage.py collectstatic --no-input
 python manage.py migrate
