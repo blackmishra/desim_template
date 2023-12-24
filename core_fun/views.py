@@ -70,8 +70,9 @@ class UploadTemplateView(APIView):
         if serializer.is_valid():
             serializer.save()
             messages.success(request, f"Review Stored Successfully!")
-            return Response("Review created", status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return render(request, "contact.html", status=status.HTTP_201_CREATED)
+        
+        return render(serializer.errors, "contact.html", status=status.HTTP_400_BAD_REQUEST)
 
 
 def subscribe(request):
